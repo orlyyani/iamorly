@@ -1,0 +1,83 @@
+* {
+  font-family: 'Inconsolata', monospace;
+}
+
+p {
+  margin-bottom: 0 !important;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.height-full {
+  height: 100%;
+}
+
+//margins
+.m-right-10 {
+  margin-right: 10px;
+}
+
+//flex
+.justify-center-xy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.justify-center-x {
+  display: flex;
+  align-items: center;
+}
+
+.align-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+//fonts
+.f-white {
+  color: #fff;
+}
+
+.f-black {
+  color: #020403 !important;
+}
+
+.f-medium {
+  font-size: 1.8em;
+}
+
+.f-small {
+  font-size: 1.2em;
+}
+
+.f-500 {
+  font-weight: 500;
+}
+
+.decore-none {
+  text-decoration: none !important;
+}
+
+//media queries
+@media only screen and (max-width: 969px) {
+  .profile-info {
+    .profile-info__details {
+      margin-right: 160px !important;
+    }
+    .profile-info__photo {
+      // margin-left: 150px !important;
+      .v-image {
+        height: 300px !important;
+        width: 150px !important;
+      }
+    }
+    .profile-info__photo:after {
+      height: 335px !important;
+      width: 150px !important;
+      top: -17px !important;
+    }
+  }
+}
