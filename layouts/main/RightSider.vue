@@ -63,6 +63,9 @@
           >Mail</a
         >
       </div>
+      <div class="full-name">
+        <FullName />
+      </div>
       <div class="informations">
         <v-lazy
           :options="{
@@ -94,12 +97,14 @@
 <script>
 import Profile from '@/components/Profile'
 import Skills from '@/components/Skills'
+import FullName from '@/components/FullName'
 
 export default {
   name: 'RightSider',
   components: {
     Profile,
     Skills,
+    FullName,
   },
 }
 </script>

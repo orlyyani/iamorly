@@ -4,11 +4,21 @@
   padding-left: 10px;
   letter-spacing: 0.5em;
 }
+
+.profile-image {
+  position: absolute;
+  max-width: 500px;
+  bottom: -135px;
+  z-index: -1;
+  right: -180px;
+  opacity: 0.2;
+  overflow: hidden;
+}
 </style>
 
 <template>
   <div class="profile">
-    <div class="profile-holder glitch-parent">
+    <div class="profile-holder relative glitch-parent">
       <div v-scroll-reveal.reset class="profile-header m-bottom-10">
         <h2 class="glitch pointer" data-text="PROFILE">PROFILE</h2>
       </div>
@@ -23,8 +33,8 @@
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
-      <div v-scroll-reveal.reset class="profile-back m-top-40">
-        <v-img :src="ProfileBack"></v-img>
+      <div v-scroll-reveal.reset class="profile-back m-top-40 profile-image">
+        <v-img :src="ProfileBack" aspect-ratio></v-img>
       </div>
     </div>
   </div>
