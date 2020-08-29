@@ -8,7 +8,7 @@
 
 <template>
   <div class="profile">
-    <div class="profile-holder">
+    <div class="profile-holder glitch-parent">
       <div class="profile-header m-bottom-10">
         <h2 class="glitch pointer" data-text="PROFILE">PROFILE</h2>
       </div>
@@ -23,12 +23,22 @@
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
+      <!-- <div class="profile-back">
+        <v-img :src="ProfileBack"></v-img>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
+import ProfileBack from '@/assets/images/profile-back.jpg'
+
 export default {
   name: 'Profile',
+  data() {
+    return {
+      ProfileBack,
+    }
+  },
 }
 </script>

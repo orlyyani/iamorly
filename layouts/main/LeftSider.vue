@@ -1,6 +1,5 @@
 <style scoped>
 .profile-info__details {
-  z-index: 9;
   margin-right: 230px;
   text-align: right;
 }
@@ -44,14 +43,15 @@
   border-left: 7px solid #020403;
   padding-left: 5px;
 }
+
+.profile {
+  position: fixed;
+}
 </style>
 
 <template>
   <div class="left-sider height-full">
-    <div
-      class="left-sider__holder justify-center-xy height-full"
-      :style="cssProps"
-    >
+    <div class="left-sider__holder justify-center-xy height-full">
       <div class="profile">
         <div class="profile-info justify-center-xy width-full">
           <div class="profile-info__details">
@@ -126,12 +126,6 @@ export default {
   data() {
     return {
       ProfileImage,
-      cssProps: {
-        background: `
-          linear-gradient(90deg, rgba(15,12,43,0.9) 0%, rgba(15,12,43,0.9) 100%, rgba(16,13,44,0.9) 100%, rgba(0,212,255,1) 100%),
-          url(${require('@/assets/images/back-img.jpeg')}) no-repeat center center fixed
-        `,
-      },
     }
   },
   methods: {

@@ -14,7 +14,7 @@
 
 <template>
   <div class="skills">
-    <div class="skills-holder">
+    <div class="skills-holder glitch-parent">
       <div class="skills-header m-bottom-10">
         <h2 class="glitch pointer" data-text="SKILLS">SKILLS</h2>
       </div>

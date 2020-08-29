@@ -88,6 +88,19 @@ p {
       top: -17px !important;
     }
   }
+
+  .left-back-image {
+    height: 500px !important;
+  }
+
+  .left-sider {
+    .left-sider__holder {
+      height: 500px;
+      .profile {
+        position: inherit;
+      }
+    }
+  }
 }
 
 //glitch effect
@@ -100,7 +113,7 @@ p {
   height: 100%;
 }
 
-.glitch:hover {
+.glitch-parent:hover .glitch {
 position: relative;
 color: #020403;
 font-size: 1.5em;

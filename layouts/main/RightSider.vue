@@ -69,6 +69,7 @@
             threshold: 0.5,
           }"
           transition="slide-y-reverse-transition"
+          hide-on-leave
         >
           <div class="info-left">
             <Profile />
@@ -79,6 +80,7 @@
             threshold: 0.5,
           }"
           transition="slide-y-reverse-transition"
+          hide-on-leave
         >
           <div class="info-right">
             <Skills />
