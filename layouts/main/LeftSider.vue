@@ -31,6 +31,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover !important;
+  position: fixed;
 }
 
 .user-name {
@@ -42,10 +43,6 @@
   display: initial;
   border-left: 7px solid #020403;
   padding-left: 5px;
-}
-
-.profile {
-  position: fixed;
 }
 </style>
 
@@ -69,7 +66,7 @@
               <div class="porifle-job">
                 <v-lazy
                   :options="{
-                    threshold: 0.1,
+                    threshold: 0.9,
                   }"
                   transition="slide-x-transition"
                 >
@@ -77,7 +74,7 @@
                 </v-lazy>
                 <v-lazy
                   :options="{
-                    threshold: 0.5,
+                    threshold: 0.9,
                   }"
                   transition="slide-x-transition"
                 >
@@ -85,7 +82,7 @@
                 </v-lazy>
                 <v-lazy
                   :options="{
-                    threshold: 1,
+                    threshold: 0.9,
                   }"
                   transition="slide-x-transition"
                 >
@@ -96,7 +93,7 @@
           </div>
           <v-lazy
             :options="{
-              threshold: 0.5,
+              threshold: 0.9,
             }"
             transition="scale-transition"
           >
@@ -119,7 +116,7 @@
 
 <script>
 import ProfileImage from '@/assets/images/profile-image.gif'
-import GlitchEffect from 'glitch-canvas'
+// import GlitchEffect from 'glitch-canvas'
 
 export default {
   name: 'LeftSider',

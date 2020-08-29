@@ -15,10 +15,10 @@
 <template>
   <div class="skills">
     <div class="skills-holder glitch-parent">
-      <div class="skills-header m-bottom-10">
+      <div v-scroll-reveal.reset class="skills-header m-bottom-10">
         <h2 class="glitch pointer" data-text="SKILLS">SKILLS</h2>
       </div>
-      <div class="skills-info">
+      <div v-scroll-reveal.reset class="skills-info">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

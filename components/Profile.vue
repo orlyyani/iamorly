@@ -9,10 +9,10 @@
 <template>
   <div class="profile">
     <div class="profile-holder glitch-parent">
-      <div class="profile-header m-bottom-10">
+      <div v-scroll-reveal.reset class="profile-header m-bottom-10">
         <h2 class="glitch pointer" data-text="PROFILE">PROFILE</h2>
       </div>
-      <div class="profile-info">
+      <div v-scroll-reveal.reset class="profile-info">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -23,9 +23,9 @@
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
-      <!-- <div class="profile-back">
+      <div v-scroll-reveal.reset class="profile-back m-top-40">
         <v-img :src="ProfileBack"></v-img>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>

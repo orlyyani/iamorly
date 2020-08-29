@@ -22,12 +22,12 @@
 }
 
 .info-left {
-  margin-top: 40px;
+  margin-top: 100px;
   margin-right: 100px;
 }
 
 .info-right {
-  margin-top: 40px;
+  margin-top: 100px;
   margin-left: 100px;
 }
 </style>
@@ -71,7 +71,7 @@
           transition="slide-y-reverse-transition"
           hide-on-leave
         >
-          <div class="info-left">
+          <div v-scroll-reveal.reset class="info-left">
             <Profile />
           </div>
         </v-lazy>
@@ -82,7 +82,7 @@
           transition="slide-y-reverse-transition"
           hide-on-leave
         >
-          <div class="info-right">
+          <div v-scroll-reveal.reset class="info-right">
             <Skills />
           </div>
         </v-lazy>
@@ -92,14 +92,14 @@
 </template>
 
 <script>
-import Profile from '@/components/Profile';
-import Skills from '@/components/Skills';
+import Profile from '@/components/Profile'
+import Skills from '@/components/Skills'
 
 export default {
   name: 'RightSider',
   components: {
     Profile,
     Skills,
-  }
+  },
 }
 </script>

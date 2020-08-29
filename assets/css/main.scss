@@ -23,6 +23,10 @@ p {
   margin-bottom: 10px;
 }
 
+.m-top-40 {
+  margin-top: 20px;
+}
+
 //flex
 .justify-center-xy {
   display: flex;
@@ -95,10 +99,24 @@ p {
 
   .left-sider {
     .left-sider__holder {
+      position: relative !important;
       height: 500px;
       .profile {
         position: inherit;
       }
+    }
+  }
+
+  .back-container {
+    position: relative !important;
+  }
+
+  .informations {
+    .info-left {
+      margin-right: 20px !important;
+    }
+    .info-right {
+      margin-left: 20px !important;
     }
   }
 }

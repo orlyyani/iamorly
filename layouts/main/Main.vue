@@ -21,6 +21,10 @@
   width: 100%;
   height: 100%;
 }
+
+.back-container {
+  position: fixed;
+}
 </style>
 <template>
   <div class="main-layout">
@@ -36,18 +40,15 @@
             </v-col>
           </v-row>
         </v-container> -->
-        <v-container fluid fill-height pa-0>
+        <v-container fluid fill-height pa-0 ma-0 class="back-container">
           <v-row class="fill-height ma-0">
             <v-col cols="12" md="6" class="ma-0 pa-0">
               <div :style="cssProps" class="left-back-image"></div>
             </v-col>
-            <v-col cols="12" md="6">
-              <!-- white space -->
-            </v-col>
           </v-row>
         </v-container>
-        <v-container fluid fill-height pa-0 class="main-content">
-          <v-row class="fill-height ma-0" max-width="1110px">
+        <v-container fill-height pa-0 class="main-content">
+          <v-row class="fill-height ma-0 width-full" max-width="1110px">
             <v-col cols="12" md="6" class="ma-0 pa-0">
               <LeftSider />
             </v-col>
