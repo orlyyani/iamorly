@@ -16,6 +16,20 @@
 .hover-underline:hover:after {
   width: 100%;
 }
+
+.informations {
+  padding: 20px;
+}
+
+.info-left {
+  margin-top: 40px;
+  margin-right: 100px;
+}
+
+.info-right {
+  margin-top: 40px;
+  margin-left: 100px;
+}
 </style>
 
 <template>
@@ -49,12 +63,41 @@
           >Mail</a
         >
       </div>
+      <div class="informations">
+        <v-lazy
+          :options="{
+            threshold: 0.5,
+          }"
+          transition="slide-y-reverse-transition"
+        >
+          <div class="info-left">
+            <Profile />
+          </div>
+        </v-lazy>
+        <v-lazy
+          :options="{
+            threshold: 0.5,
+          }"
+          transition="slide-y-reverse-transition"
+        >
+          <div class="info-right">
+            <Skills />
+          </div>
+        </v-lazy>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Profile from '@/components/Profile';
+import Skills from '@/components/Skills';
+
 export default {
   name: 'RightSider',
+  components: {
+    Profile,
+    Skills,
+  }
 }
 </script>
