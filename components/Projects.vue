@@ -25,6 +25,36 @@
       </div>
       <div v-scroll-reveal.reset class="projects-info">
         <div class="project m-top-40">
+          <blockquote class="embedly-card" data-card-controls="0">
+            <h4>
+              <a href="https://github.com/orlyyani/read-more"
+                >orlyyani/read-more</a
+              >
+            </h4>
+            <p>
+              Read-More is a simple plugin fo vue.js that has been created with
+              ❤️ by a bored developer. For examples, refer to the demo page. npm
+              install vue-read-more --save Add read more length Add read more
+              link Custom read more string Custom read less string import
+              ReadMore from 'vue-read-more'; Vue.use(ReadMore); You can use
+              either the Component approach or the Directive approach.
+            </p>
+          </blockquote>
+        </div>
+        <div class="project m-top-40">
+          <blockquote class="embedly-card" data-card-controls="0">
+            <h4>
+              <a href="https://github.com/orlyyani/photo-grid"
+                >orlyyani/photo-grid</a
+              >
+            </h4>
+            <p>
+              This component let you automatically arrange the photos depending
+              on their clusters. - orlyyani/photo-grid
+            </p>
+          </blockquote>
+        </div>
+        <!-- <div class="project m-top-40">
           <div
             class="github-card"
             data-github="orlyyani/read-more"
@@ -41,7 +71,7 @@
             data-height="153"
             data-theme="default"
           ></div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -57,6 +87,9 @@ export default {
       'https://cdn.jsdelivr.net/github-cards/latest/widget.js'
     )
     document.head.appendChild(githubScript)
+    const githubScript2 = document.createElement('script')
+    githubScript2.setAttribute('src', '//cdn.embedly.com/widgets/platform.js')
+    document.head.appendChild(githubScript2)
   },
 }
 </script>
