@@ -9,7 +9,6 @@
   align-items: flex-end;
   flex-direction: column;
   text-align: right;
-  margin-bottom: 200px;
 }
 .m-top-100 {
   margin-top: 100px;
@@ -23,8 +22,8 @@
         <h2 class="glitch pointer" data-text="PROJECTS">PROJECTS</h2>
         <h3 class="pointer">Open Source</h3>
       </div>
-      <div v-scroll-reveal.reset class="projects-info">
-        <div class="project m-top-40">
+      <div class="projects-info">
+        <div v-scroll-reveal.reset class="project m-top-40">
           <blockquote class="embedly-card" data-card-controls="0">
             <h4>
               <a href="https://github.com/orlyyani/read-more"
@@ -41,7 +40,7 @@
             </p>
           </blockquote>
         </div>
-        <div class="project m-top-40">
+        <div v-scroll-reveal.reset class="project m-top-40">
           <blockquote class="embedly-card" data-card-controls="0">
             <h4>
               <a href="https://github.com/orlyyani/photo-grid"

@@ -16,8 +16,8 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    titleTemplate: '%s | ' + 'Orly John Yanson',
+    title: process.env.APP_NAME || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -35,6 +35,10 @@ export default {
           'https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap',
       },
     ],
+  },
+  env: {
+    baseUrl: process.env.BASE_URL,
+    appName: process.env.APP_NAME,
   },
   /*
    ** Global CSS

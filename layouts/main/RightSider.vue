@@ -96,8 +96,19 @@
           transition="slide-y-reverse-transition"
           hide-on-leave
         >
-          <div v-scroll-reveal.reset class="projects">
+          <div v-scroll-reveal.reset class="projects info-right">
             <Projects />
+          </div>
+        </v-lazy>
+        <v-lazy
+          :options="{
+            threshold: 0.5,
+          }"
+          transition="slide-y-reverse-transition"
+          hide-on-leave
+        >
+          <div v-scroll-reveal.reset class="info-left">
+            <Experience />
           </div>
         </v-lazy>
       </div>
@@ -110,6 +121,7 @@ import Profile from '@/components/Profile'
 import Skills from '@/components/Skills'
 import FullName from '@/components/FullName'
 import Projects from '@/components/Projects'
+import Experience from '@/components/Experience'
 
 export default {
   name: 'RightSider',
@@ -118,6 +130,7 @@ export default {
     Skills,
     FullName,
     Projects,
+    Experience,
   },
 }
 </script>
