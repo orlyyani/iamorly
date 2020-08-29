@@ -9,7 +9,7 @@
   align-items: flex-end;
   flex-direction: column;
   text-align: right;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 </style>
 
