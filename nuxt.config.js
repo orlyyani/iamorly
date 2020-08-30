@@ -26,6 +26,33 @@ export default {
         name: 'description',
         content: process.env.npm_package_description || '',
       },
+      // facebook
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: process.env.APP_NAME,
+      },
+      { hid: 'og:url', property: 'og:url', content: process.env.BASE_URL },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:title', property: 'og:title', content: 'iamorly' },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          'Web Developer, UI/UX Designer, Gamer, Artist, Frustrated GameDev 🎮',
+      },
+      // { hid: 'og:image', property: 'og:image', content: 'https://dimers.appetiserdev.tech/_nuxt/img/dimers-yellow.5ce810c.png' },
+      // twitter
+      { hid: 'twitter:card', property: 'twitter:card', content: 'summary' },
+      { hid: 'twitter:site', property: 'twitter:site', content: '@orlyyani' },
+      {
+        hid: 'twitter:description',
+        property: 'twitter:description',
+        content:
+          'Web Developer, UI/UX Designer, Gamer, Artist, Frustrated GameDev 🎮',
+      },
+      { hid: 'twitter:title', property: 'twitter:title', content: 'iamorly' },
+      // { hid: 'twitter:image', property: 'twitter:image', content: 'https://dimers.appetiserdev.tech/_nuxt/img/dimers-yellow.5ce810c.png' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
