@@ -8,7 +8,7 @@
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  text-align: right;
+  /* text-align: right; */
 }
 .m-top-100 {
   margin-top: 100px;
@@ -23,7 +23,7 @@
         <h3 class="pointer">Open Source</h3>
       </div>
       <div class="projects-info">
-        <div v-scroll-reveal.reset class="project m-top-40">
+        <div class="project m-top-40">
           <blockquote class="embedly-card" data-card-controls="0">
             <h4>
               <a href="https://github.com/orlyyani/read-more"
@@ -40,7 +40,7 @@
             </p>
           </blockquote>
         </div>
-        <div v-scroll-reveal.reset class="project m-top-40">
+        <div class="project m-top-40">
           <blockquote class="embedly-card" data-card-controls="0">
             <h4>
               <a href="https://github.com/orlyyani/photo-grid"
@@ -54,22 +54,18 @@
           </blockquote>
         </div>
         <!-- <div class="project m-top-40">
-          <div
-            class="github-card"
-            data-github="orlyyani/read-more"
-            data-width="400"
-            data-height="150"
-            data-theme="default"
-          ></div>
-        </div>
-        <div class="project m-top-40">
-          <div
-            class="github-card"
-            data-github="orlyyani/photo-grid"
-            data-width="400"
-            data-height="153"
-            data-theme="default"
-          ></div>
+          <blockquote class="embedly-card" data-card-controls="0">
+            <h4>
+              <a
+                href="https://www.behance.net/orlyyani?fbclid=IwAR3rgkx_AsIFZpmUqhuvbO5fKSSeBF1dEA6M9Pqzcy7XsYt7yDAI8mHOazQ"
+                >Orly John Yanson on Behance</a
+              >
+            </h4>
+            <p>
+              Web Developer, UI/UX Designer, Gamer, Artist, Frustrated GameDev
+              ⚡
+            </p>
+          </blockquote>
         </div> -->
       </div>
     </div>
@@ -80,15 +76,9 @@
 export default {
   name: 'Projects',
   mounted() {
-    const githubScript = document.createElement('script')
-    githubScript.setAttribute(
-      'src',
-      'https://cdn.jsdelivr.net/github-cards/latest/widget.js'
-    )
-    document.head.appendChild(githubScript)
-    const githubScript2 = document.createElement('script')
-    githubScript2.setAttribute('src', '//cdn.embedly.com/widgets/platform.js')
-    document.head.appendChild(githubScript2)
+    const embedScript = document.createElement('script')
+    embedScript.setAttribute('src', '//cdn.embedly.com/widgets/platform.js')
+    document.head.appendChild(embedScript)
   },
 }
 </script>

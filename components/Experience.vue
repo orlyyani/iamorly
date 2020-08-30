@@ -17,7 +17,7 @@
       </div>
       <div v-scroll-reveal.reset class="experience-info">
         <h3 class="m-top-40">Front-End Web Developer / UI/UX</h3>
-        <h3>Mynd Consulting - 2yrs 5mos</h3>
+        <h3>Mynd Consulting - 2 yrs 5 mos</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
