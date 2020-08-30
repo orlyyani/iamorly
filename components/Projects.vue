@@ -27,7 +27,7 @@
         <h2 class="glitch pointer" data-text="PROJECTS">PROJECTS</h2>
         <h3 class="pointer">Open Source</h3>
       </div>
-      <div class="projects-info">
+      <div v-scroll-reveal.reset class="projects-info">
         <div class="project m-top-40">
           <blockquote class="embedly-card" data-card-controls="0">
             <h4>
