@@ -8,10 +8,15 @@
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  /* text-align: right; */
+  text-align: right;
 }
 .m-top-100 {
   margin-top: 100px;
+}
+.projects-info {
+  display: flex;
+  overflow: auto;
+  width: 100%;
 }
 </style>
 
