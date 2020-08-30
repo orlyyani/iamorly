@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import ogImage from '@/assets/images/pp.jpg'
 
 export default {
   /*
@@ -41,7 +42,11 @@ export default {
         content:
           'Web Developer, UI/UX Designer, Gamer, Artist, Frustrated GameDev 🎮',
       },
-      // { hid: 'og:image', property: 'og:image', content: 'https://dimers.appetiserdev.tech/_nuxt/img/dimers-yellow.5ce810c.png' },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: process.env.BASE_URL + ogImage,
+      },
       // twitter
       { hid: 'twitter:card', property: 'twitter:card', content: 'summary' },
       { hid: 'twitter:site', property: 'twitter:site', content: '@orlyyani' },
@@ -52,7 +57,11 @@ export default {
           'Web Developer, UI/UX Designer, Gamer, Artist, Frustrated GameDev 🎮',
       },
       { hid: 'twitter:title', property: 'twitter:title', content: 'iamorly' },
-      // { hid: 'twitter:image', property: 'twitter:image', content: 'https://dimers.appetiserdev.tech/_nuxt/img/dimers-yellow.5ce810c.png' },
+      {
+        hid: 'twitter:image',
+        property: 'twitter:image',
+        content: process.env.BASE_URL + ogImage,
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
