@@ -1,5 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
-import ogImage from '@/assets/images/pp.jpg'
+// import ogImage from 'assets/images/pp.jpg'
 
 export default {
   /*
@@ -33,7 +33,7 @@ export default {
         property: 'og:site_name',
         content: process.env.APP_NAME,
       },
-      { hid: 'og:url', property: 'og:url', content: process.env.BASE_URL },
+      { hid: 'og:url', property: 'og:url', content: 'http://iamorly.com/' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:title', property: 'og:title', content: 'iamorly' },
       {
@@ -45,7 +45,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: process.env.BASE_URL + ogImage,
+        content: '/pp.jpg',
       },
       // twitter
       { hid: 'twitter:card', property: 'twitter:card', content: 'summary' },
@@ -60,7 +60,7 @@ export default {
       {
         hid: 'twitter:image',
         property: 'twitter:image',
-        content: process.env.BASE_URL + ogImage,
+        content: '/pp.jpg',
       },
     ],
     link: [
