@@ -11,6 +11,10 @@
   text-align: right;
   margin-bottom: 100px;
 }
+.skills {
+  text-align: left;
+  margin-top: 20px;
+}
 </style>
 
 <template>
@@ -21,14 +25,26 @@
       </div>
       <div v-scroll-reveal.reset class="skills-info">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          "Coding for a living is learning for a living." I do enjoy programming
+          and honing my skills. I do have a comprehensive knowledge of Web
+          Development from Front-End, Back-End, and up to DevOps.Through the
+          years, I have been developing several PWA(Progressive Web App),
+          SPA(Single Page App), AMP(Accelerated Mobile Pages) applications.
         </p>
+        <div class="skills">
+          <h3 class="m-top-20">Front-End</h3>
+          <p>
+            HTML, CSS, Javascript, Vue JS, Nuxt JS, SEO (Search Engine
+            Optimization), Angular JS
+          </p>
+          <hr />
+          <h3 class="m-top-20">Back-End</h3>
+          <p>PHP, Python, Laravel, MySQL, DJango, GraphQL, REST</p>
+          <hr />
+          <h3 class="m-top-20">Server</h3>
+          <p>AWS, Heroku, Digital Ocean, Nginx, Apache, Docker</p>
+          <hr />
+        </div>
       </div>
     </div>
   </div>

@@ -53,7 +53,7 @@
             </p>
           </blockquote>
         </div>
-        <!-- <div class="project m-top-40">
+        <div class="project m-top-40">
           <blockquote class="embedly-card" data-card-controls="0">
             <h4>
               <a
@@ -66,7 +66,7 @@
               ⚡
             </p>
           </blockquote>
-        </div> -->
+        </div>
       </div>
     </div>
   </div>

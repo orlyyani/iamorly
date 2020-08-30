@@ -24,13 +24,13 @@
       </div>
       <div v-scroll-reveal.reset class="profile-info">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          Hi there, I am Orly and I do coding for a living. I'm in the tech
+          industry for almost four years and I have been developing different
+          web applications such as CMS(Content Management System), Commercial
+          sites, Static web sites, E-commerce apps, etc. Outside of programming
+          I do enjoy playing video games and sometimes, I play alone so hit me
+          up if you wanted to play. If you have any questions or inquiries, just
+          do send me an email and let's have a chat.
         </p>
       </div>
       <div v-scroll-reveal.reset class="profile-back m-top-40 profile-image">
