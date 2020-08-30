@@ -31,7 +31,7 @@
           years, I have been developing several PWA(Progressive Web App),
           SPA(Single Page App), AMP(Accelerated Mobile Pages) applications.
         </p>
-        <div class="skills">
+        <!-- <div class="skills">
           <h3 class="m-top-20">Front-End</h3>
           <p>
             HTML, CSS, Javascript, Vue JS, Nuxt JS, SEO (Search Engine
@@ -44,7 +44,7 @@
           <h3 class="m-top-20">Server</h3>
           <p>AWS, Heroku, Digital Ocean, Nginx, Apache, Docker</p>
           <hr />
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
