@@ -25,7 +25,7 @@
       <div v-scroll-reveal.reset class="profile-info">
         <p>
           Hi there, I am Orly and I do coding for a living. I'm in the tech
-          industry for almost four years and I have been developing different
+          industry for almost six years and I have been developing different
           web applications such as CMS(Content Management System), Commercial
           sites, Static web sites, E-commerce apps, etc. Outside of programming
           I do enjoy playing video games and sometimes, I play alone so hit me
