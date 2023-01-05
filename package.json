@@ -11,6 +11,9 @@
     "lint": "yarn lint:js",
     "heroku-postbuild": "yarn build"
   },
+  "engines": {
+    "node": "10.24.1"
+  },
   "dependencies": {
     "@nuxt/typescript-runtime": "^1.0.0",
     "@nuxtjs/axios": "^5.12.0",
