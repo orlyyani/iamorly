@@ -24,13 +24,7 @@
       </div>
       <div v-scroll-reveal.reset class="profile-info">
         <p>
-          Hi there, I am Orly and I do coding for a living. I'm in the tech
-          industry for almost six years and I have been developing different
-          web applications such as CMS(Content Management System), Commercial
-          sites, Static web sites, E-commerce apps, etc. Outside of programming
-          I do enjoy playing video games and sometimes, I play alone so hit me
-          up if you wanted to play. If you have any questions or inquiries, just
-          do send me an email and let's have a chat.
+          Hello, I'm Orly and I make a living as a coder. I've been working in the tech industry for approximately six years and have extensive experience in developing a variety of web applications, including CMS (Content Management System), commercial sites, static websites, e-commerce applications, and more. In my free time, I enjoy playing video games, and occasionally play solo. If you're interested in gaming with me, feel free to reach out. If you have any questions or would like to get in touch, simply send me an email, and I'll be happy to chat.
         </p>
       </div>
       <div v-scroll-reveal.reset class="profile-back m-top-40 profile-image">

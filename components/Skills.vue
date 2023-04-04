@@ -25,11 +25,7 @@
       </div>
       <div v-scroll-reveal.reset class="skills-info">
         <p>
-          "Coding for a living is learning for a living." I do enjoy programming
-          and honing my skills. I do have a comprehensive knowledge of Web
-          Development from Front-End, Back-End, and up to DevOps.Through the
-          years, I have been developing several PWA(Progressive Web App),
-          SPA(Single Page App), AMP(Accelerated Mobile Pages) applications.
+          "Programming is a continuous process of learning." I find great joy in coding and improving my abilities. I have a thorough understanding of Web Development, covering the front-end, back-end, and DevOps aspects. Over the years, I have been involved in the creation of various Progressive Web Apps (PWA), Single Page Apps (SPA), and Accelerated Mobile Pages (AMP) applications.
         </p>
         <!-- <div class="skills">
           <h3 class="m-top-20">Front-End</h3>
