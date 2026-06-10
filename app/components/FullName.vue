@@ -1,0 +1,19 @@
+<template>
+  <div class="text-right mt-25">
+    <GlitchHeading
+      text="ORLY"
+      tag="h1"
+      mode="always"
+    />
+    <GlitchHeading
+      text="JOHN"
+      tag="h1"
+      mode="always"
+    />
+    <GlitchHeading
+      text="YANSON"
+      tag="h1"
+      mode="always"
+    />
+  </div>
+</template>

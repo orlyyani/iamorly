@@ -1,20 +1,47 @@
 # iamorly
 
-## Build Setup
+Personal portfolio of Orly John Yanson, built with [Nuxt 4](https://nuxt.com) and [Nuxt UI](https://ui.nuxt.com), deployed as a static site on Cloudflare Pages.
+
+## Setup
 
 ```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
+npm install
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Development
+
+Start the dev server on `http://localhost:3000`:
+
+```bash
+npm run dev
+```
+
+## Production
+
+Build a static site (output in `.output/public`):
+
+```bash
+npm run generate
+```
+
+Preview the generated site locally:
+
+```bash
+npm run preview
+```
+
+## Linting & type-checking
+
+```bash
+npm run lint
+npm run typecheck
+```
+
+## Deployment
+
+The site is deployed to [Cloudflare Pages](https://pages.cloudflare.com) as a static export:
+
+- Build command: `npm run generate`
+- Output directory: `.output/public`
+
+See [CLAUDE.md](./CLAUDE.md) for project structure and content-editing notes.
