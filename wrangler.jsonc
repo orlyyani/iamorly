@@ -1,0 +1,8 @@
+{
+  "name": "iamorly",
+  "compatibility_date": "2025-01-15",
+  "assets": {
+    "directory": ".output/public",
+    "not_found_handling": "404-page"
+  }
+}

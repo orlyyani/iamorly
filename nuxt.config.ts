@@ -47,6 +47,13 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-01-15',
 
+  // Force the static preset so CI environments that auto-detect a
+  // "cloudflare" provider (e.g. Cloudflare Workers Builds) don't get
+  // switched to a server/worker preset during `nuxi generate`.
+  nitro: {
+    preset: 'static'
+  },
+
   eslint: {
     config: {
       stylistic: {
