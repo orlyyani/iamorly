@@ -13,6 +13,7 @@ const backdropStyle = {
       <div class="text-right">
         <div
           v-motion-slide-visible-once-left
+          :duration="1000"
           class="inline-block bg-paper p-1.5"
         >
           <p class="inline border-l-[7px] border-ink pl-1.5 text-[1.2em] text-ink">
@@ -23,6 +24,7 @@ const backdropStyle = {
           <p
             v-motion-slide-visible-once-right
             :delay="100"
+            :duration="1000"
             class="text-[1.8em] text-paper"
           >
             Programmer
@@ -30,6 +32,7 @@ const backdropStyle = {
           <p
             v-motion-slide-visible-once-right
             :delay="200"
+            :duration="1000"
             class="text-[1.8em] text-paper"
           >
             / Developer
@@ -37,6 +40,7 @@ const backdropStyle = {
           <p
             v-motion-slide-visible-once-right
             :delay="300"
+            :duration="1000"
             class="text-[1.8em] text-paper"
           >
             & Designer
@@ -46,6 +50,7 @@ const backdropStyle = {
 
       <div
         v-motion-pop-visible-once
+        :duration="1000"
         class="relative h-[300px] w-[150px] after:absolute after:top-[-17px] after:left-0 after:z-[11] after:h-[335px] after:w-[150px] after:border-l-[3px] after:border-paper after:content-[''] md:h-[400px] md:w-[200px] md:after:top-[-45px] md:after:h-[500px] md:after:w-[200px]"
       >
         <div class="h-full w-full overflow-hidden rounded-tr-[200px] rounded-br-[200px]">
