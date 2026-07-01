@@ -6,6 +6,7 @@
 
     <div
       v-motion-slide-visible-once-bottom
+      :duration="1000"
       class="md:mr-25"
     >
       <ProfileSection />
@@ -13,6 +14,7 @@
 
     <div
       v-motion-slide-visible-once-bottom
+      :duration="1000"
       class="md:ml-25"
     >
       <SkillsSection />
@@ -20,16 +22,25 @@
 
     <div
       v-motion-slide-visible-once-bottom
-      class="md:ml-25"
+      :duration="1000"
     >
       <ProjectsSection />
     </div>
 
     <div
       v-motion-slide-visible-once-bottom
+      :duration="1000"
       class="md:mr-25"
     >
       <ExperienceSection />
+    </div>
+
+    <div
+      v-motion-slide-visible-once-bottom
+      :duration="1000"
+      class="md:ml-25"
+    >
+      <RecommendationsSection />
     </div>
   </div>
 </template>

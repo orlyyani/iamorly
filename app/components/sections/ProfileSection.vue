@@ -25,7 +25,7 @@ const yearsOfExperience = computed(() => {
     <p>
       Hello, I'm Orly and I make a living as a coder. I've been working in the tech industry for approximately {{ yearsOfExperience }} years and have extensive experience in developing a variety of web applications, including CMS (Content Management System), commercial sites, static websites, e-commerce applications, and more. In my free time, I enjoy playing video games, and occasionally play solo. If you're interested in gaming with me, feel free to reach out. If you have any questions or would like to get in touch, simply send me an email, and I'll be happy to chat.
     </p>
-    <div class="absolute -right-[180px] -bottom-[135px] -z-10 hidden max-w-[500px] opacity-20 overflow-hidden pointer-events-none md:block">
+    <div class="absolute -right-[180px] -bottom-[135px] -z-10 hidden max-w-[360px] opacity-20 overflow-hidden pointer-events-none md:block">
       <NuxtImg
         src="/images/profile-back.jpg"
         alt=""
