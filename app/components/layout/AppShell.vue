@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const backdropStyle = {
-  backgroundImage: 'linear-gradient(rgba(15,12,43,0.9), rgba(15,12,43,0.9)), url(\'/images/back-img.jpeg\')'
+  backgroundImage: 'linear-gradient(rgba(15,12,43,0.9), rgba(15,12,43,0.9)), url(\'/images/back-img.jpg\')'
 }
 </script>
 
