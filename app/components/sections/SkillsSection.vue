@@ -11,7 +11,7 @@ import { skillCategories } from '~/data/skills'
       class="mb-2.5"
     />
     <p class="mt-5">
-      "Programming is a continuous process of learning." I find great joy in coding and improving my abilities. I have a thorough understanding of Web Development, covering the front-end, back-end, and DevOps aspects. Over the years, I have been involved in the creation of various Progressive Web Apps (PWA), Single Page Apps (SPA), and Accelerated Mobile Pages (AMP) applications.
+      I work across the full stack but specialize in the Vue ecosystem — Vue 3, Nuxt 3, TypeScript, and Pinia — with hands-on experience in backend, cloud, payments, and PWA architecture.
     </p>
     <div class="mt-5 flex w-full flex-col items-end gap-4">
       <div
