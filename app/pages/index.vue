@@ -3,7 +3,7 @@ definePageMeta({
   colorMode: 'light'
 })
 
-const description = 'Web Developer, UI/UX Designer, Gamer, Artist, Frustrated GameDev 🎮'
+const description = 'Lead Front-End Developer specializing in Vue 3, Nuxt 3 & TypeScript · Web/UI Designer · Remote from the Philippines'
 
 useSeoMeta({
   title: 'Orly John Yanson',

@@ -23,8 +23,25 @@ const yearsOfExperience = computed(() => {
       class="mb-2.5"
     />
     <p>
-      Hello, I'm Orly and I make a living as a coder. I've been working in the tech industry for approximately {{ yearsOfExperience }} years and have extensive experience in developing a variety of web applications, including CMS (Content Management System), commercial sites, static websites, e-commerce applications, and more. In my free time, I enjoy playing video games, and occasionally play solo. If you're interested in gaming with me, feel free to reach out. If you have any questions or would like to get in touch, simply send me an email, and I'll be happy to chat.
+      I'm Orly, a lead front-end developer with {{ yearsOfExperience }} years of experience building web applications and full products for clients in Australia, the US, and the Philippines. My core stack is Vue 3, Nuxt 3, TypeScript, and Pinia, with practical experience across Laravel, MySQL, AWS, Docker, Stripe, and PWA architecture.
     </p>
+    <p class="mt-4">
+      At Appetiser I sit on the platform council and lead front-end technical direction: architecture and code review, developer skill assessment and task assignment, candidate evaluation, and onboarding. Alongside that, I design UI/UX and deliver CMS-based sites for freelance clients, and I keep current by building personal projects with AI-assisted development tools.
+    </p>
+    <p class="mt-4">
+      What you get working with me: clear scope, maintainable code, documented handover, and direct communication. If you have a project in mind, send me an email.
+    </p>
+    <UButton
+      to="/Orly-John-Yanson-Resume.pdf"
+      external
+      download
+      icon="i-lucide-download"
+      color="neutral"
+      variant="outline"
+      size="lg"
+      label="Download Resume"
+      class="mt-6"
+    />
     <div class="absolute -right-[180px] -bottom-[135px] -z-10 hidden max-w-[360px] opacity-20 overflow-hidden pointer-events-none md:block">
       <NuxtImg
         src="/images/profile-back.jpg"

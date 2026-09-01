@@ -53,6 +53,17 @@ const initials = computed(() => props.entry.company
         <p class="mt-2">
           {{ entry.description }}
         </p>
+        <ul
+          v-if="entry.highlights?.length"
+          class="mt-2 list-disc space-y-1 ps-5"
+        >
+          <li
+            v-for="highlight in entry.highlights"
+            :key="highlight"
+          >
+            {{ highlight }}
+          </li>
+        </ul>
         <div
           v-if="entry.skills?.length"
           class="mt-2 flex flex-wrap gap-2"

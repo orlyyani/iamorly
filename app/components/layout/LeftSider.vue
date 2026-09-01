@@ -25,15 +25,15 @@ const backdropStyle = {
             v-motion-slide-visible-once-right
             :delay="100"
             :duration="1000"
-            class="text-[1.8em] text-paper"
+            class="text-[1.35em] text-paper sm:text-[1.8em]"
           >
-            Programmer
+            Front-End Lead
           </p>
           <p
             v-motion-slide-visible-once-right
             :delay="200"
             :duration="1000"
-            class="text-[1.8em] text-paper"
+            class="text-[1.35em] text-paper sm:text-[1.8em]"
           >
             / Developer
           </p>
@@ -41,7 +41,7 @@ const backdropStyle = {
             v-motion-slide-visible-once-right
             :delay="300"
             :duration="1000"
-            class="text-[1.8em] text-paper"
+            class="text-[1.35em] text-paper sm:text-[1.8em]"
           >
             & Designer
           </p>

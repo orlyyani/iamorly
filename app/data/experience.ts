@@ -14,6 +14,8 @@ export interface ExperienceEntry {
   duration: string
   location: string
   description: string
+  /** Bullet points rendered under the description. */
+  highlights?: string[]
   skills?: string[]
   skillsMore?: number
 }
@@ -22,25 +24,52 @@ export const experience: ExperienceEntry[] = [
   {
     id: 'appetiser',
     company: 'Appetiser Pty Ltd',
-    role: 'Web Developer',
+    role: 'Lead Front-End Developer',
+    roleDetail: 'Platform Council',
     startDate: 'Jul 2018',
     endDate: 'Present',
     duration: '8 yrs',
-    location: '9/85 Dover Street Cremorne, Victoria, Australia',
-    description: 'By joining Appetiser Apps, a prominent company founded by Michael MacRae and Jamie Shostak, based in Australia, I was able to enhance my skills as a developer. Since joining the company in 2018, I have had the opportunity to work on a flexible basis and have made significant progress as a developer. I have collaborated with various teams to develop several web applications. Appetiser Apps has seen millions of downloads and boasts clients with billions in value.'
+    location: 'Melbourne, Victoria, Australia · Remote',
+    description: 'I lead front-end technical direction across client web applications and sit on the platform council, which sets development standards and platform decisions.',
+    highlights: [
+      'Lead front-end architecture across client web apps — Vue 3, Nuxt 3, TypeScript, Pinia, Tailwind CSS, Vee-Validate/Yup',
+      'Platform council: assess developer skill levels, assign tasks, and contribute to platform decisions and development standards',
+      'Own front-end code review — logic, component architecture, state management, and maintainability',
+      'Recruitment: technical evaluation of front-end candidates, and onboarding buddy for new developers',
+      'Backend and infrastructure when needed: Laravel + Sanctum, MySQL, AWS S3/EC2, Docker',
+      'Estimation and Agile: sprint planning, PWA feature decomposition, and retrospectives'
+    ],
+    skills: ['Vue 3', 'Nuxt 3', 'TypeScript', 'Pinia', 'Tailwind CSS', 'Laravel', 'AWS', 'Docker', 'Stripe', 'PWA']
   },
   {
-    id: 'lumea',
-    company: 'Lumea',
-    role: 'Full-stack Developer',
+    id: 'freelance',
+    company: 'Freelance',
+    role: 'Web Designer & Developer',
+    employmentType: 'Self-employed',
+    startDate: '2017',
+    endDate: 'Present',
+    duration: '9 yrs',
+    location: 'Philippines · Remote',
+    description: 'I scope, estimate, and deliver fixed-rate website projects for small businesses, from the initial audit through to go-live.',
+    highlights: [
+      'End-to-end delivery: audit, content consolidation, design, build, and go-live',
+      'Figma to responsive pages on Squarespace, WordPress, and custom builds',
+      'Domain/DNS and Cloudflare setup, with documented handover so clients can manage their own sites'
+    ],
+    skills: ['Figma', 'Squarespace', 'WordPress', 'Nuxt', 'Tailwind CSS', 'Cloudflare']
+  },
+  {
+    id: 'codev-lumea',
+    company: 'CoDev',
+    role: 'Full Stack Web Developer',
+    roleDetail: 'Deployed to client Lumea',
     employmentType: 'Full-time',
     startDate: 'Dec 2021',
     endDate: 'Feb 2024',
     duration: '2 yrs 3 mos',
     location: 'Utah, United States · Remote',
-    description: 'During my tenure at Lumea, I served as a Front-end engineer specializing in VueJS 3. Our primary focus was the development of BxLink, an application designed to seamlessly integrate with various devices to enhance the experience of pathologists. This platform also facilitates the dissemination of information to clinicians in ways previously unattainable. BxLink empowers pathologists to customize their dashboards, streamline their daily workflows, expedite the sign-out process, and soon, automatically incorporate tailored report language based on user preferences. Subsequently, I transitioned to the BackEnd team to assist with maintenance tasks while continuing my involvement in Front-end development. Within this role, I contributed to the upkeep of both the Legacy and New UIs of the BxLink application.',
-    skills: ['Full-Stack Development', 'Vue.js'],
-    skillsMore: 6
+    description: 'Working through CoDev, I was deployed to Lumea as a Vue 3 front-end engineer on BxLink, their pathology platform, and later moved to the back-end team while continuing to maintain both the legacy and new UIs. I also contributed to CoDev\'s internal Bench Team Tracking System, used to track team members and their work assignments.',
+    skills: ['Vue 3', 'Full-Stack Development', 'Yii', 'PHP', 'MySQL', 'REST APIs']
   },
   {
     id: 'adaca',
@@ -50,17 +79,23 @@ export const experience: ExperienceEntry[] = [
     endDate: 'Sep 2023',
     duration: '1 yr 10 mos',
     location: 'Australia · Remote',
-    description: 'I have gained experience on a range of projects, including Archistar and PETstock. For Archistar, I have been involved in the creation of custom front-end components using technologies such as StencilJS and popular front-end frameworks such as VueJS and ReactJS. At PETstock, I am part of a large team working on a substantial project, where I have been engaged in full-stack development utilizing CodeIgniter.'
+    description: 'Contract development across two client products.',
+    highlights: [
+      'Archistar: custom front-end components built with StencilJS, Vue, and React',
+      'PETstock: full-stack development on a large team, working in CodeIgniter'
+    ],
+    skills: ['StencilJS', 'Vue.js', 'React', 'CodeIgniter', 'PHP']
   },
   {
     id: 'mynd-consulting',
     company: 'Mynd Consulting',
-    role: 'Web Developer',
-    roleDetail: 'Web/UI Designer & Developer | Wordpress Developer | Front end Developer | Web Application Designer',
+    role: 'Web/UI Designer & Developer',
+    roleDetail: 'First professional role',
     startDate: 'Apr 2016',
     endDate: 'Aug 2018',
     duration: '2 yrs 5 mos',
-    location: 'G/F AMYA II Building, Quimpo Boulevard corner Tulip Drive, Ecoland Subdivision',
-    description: 'Mynd Consulting was an excellent company that provided me with ample opportunities to refine my front-end and UI/UX abilities. I spent nearly two years and five months with the company, starting as a Junior Developer in 2016. Through working with various teams, I was able to gain a wealth of knowledge and experience. Mynd was responsible for the development of the official Dr. Oz app, which was published by Sharecare Inc.'
+    location: 'Davao City, Philippines',
+    description: 'My first professional role, where I started as a junior developer and spent nearly two and a half years refining my front-end and UI/UX skills across a range of teams. Mynd built the official Dr. Oz app, published by Sharecare Inc.',
+    skills: ['WordPress', 'HTML & CSS', 'JavaScript', 'jQuery', 'Photoshop']
   }
 ]

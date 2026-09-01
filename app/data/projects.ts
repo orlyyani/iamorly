@@ -19,8 +19,7 @@ export const projects: Project[] = [
     company: 'Appetiser Pty Ltd',
     period: 'Oct 2023 - Apr 2024',
     description: 'A marketplace connecting hosts with unique spaces to creators and brands looking to hire them by the hour for content shoots.',
-    skills: ['Vue 3', 'Nuxt.js'],
-    skillsMore: 1,
+    skills: ['Vue 3', 'Nuxt 3', 'TypeScript', 'Pinia', 'Tailwind CSS', 'Stripe', 'PWA'],
     href: 'https://hirespyspaces.com.au/',
     image: '/images/projects/hirespy-spaces.jpg',
     gradient: 'linear-gradient(135deg, #6366f1, #a855f7)'
@@ -30,8 +29,7 @@ export const projects: Project[] = [
     company: 'Lumea',
     period: 'Dec 2021 - Feb 2024',
     description: 'A platform that integrates with lab devices to give pathologists customizable dashboards, faster sign-offs, and real-time updates for clinicians. Built the front end in Vue 3, then moved to the back end while maintaining both the legacy and new UIs.',
-    skills: ['Vue 3', 'Yii'],
-    skillsMore: 5,
+    skills: ['Vue 3', 'Vuex', 'Yii', 'PHP', 'MySQL', 'REST APIs', 'HTML & CSS'],
     href: 'https://lumeadigital.com/bxlink/',
     image: '/images/projects/bxlink.jpg',
     gradient: 'linear-gradient(135deg, #0f1535, #4c1d95 55%, #f76c6c)'
@@ -51,6 +49,15 @@ export const projects: Project[] = [
     href: 'https://dimers.com/',
     image: '/images/projects/dimers.png',
     gradient: 'linear-gradient(135deg, #0b1033, #1d4ed8 60%, #d4e157)'
+  },
+  {
+    title: 'Flikit',
+    company: 'Appetiser Pty Ltd',
+    description: 'Retailer-facing web app for the Flikit platform, built as an installable PWA with Stripe payment integration. One of two web developers in an Agile team alongside Android, iOS, QA, and PM.',
+    skills: ['Vue', 'Nuxt', 'PWA', 'Stripe'],
+    href: 'https://www.flikit.co/',
+    image: '/images/projects/flikit.jpg',
+    gradient: 'linear-gradient(135deg, #7c2d12, #f97316 55%, #fdba74)'
   },
   {
     title: 'LinkU',
