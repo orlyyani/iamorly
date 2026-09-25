@@ -27,28 +27,35 @@ app/
   error.vue                -- global error page (404 / other errors)
   assets/css/main.css      -- design tokens, glitch effect, hover-underline
   components/
-    GlitchHeading.vue       -- reusable glitch <hN data-text> heading
-    FullName.vue            -- "ORLY / JOHN / YANSON" via GlitchHeading
+    SectionHeading.vue      -- plain left-bordered <h2> used by every section
+    FullName.vue            -- the page's only <h1>: "ORLY / JOHN / YANSON" with the glitch effect
     SocialLinks.vue          -- GitHub/Twitter/LinkedIn/Mail row
     layout/
       AppShell.vue           -- two-column page shell (LeftSider + RightSider)
       LeftSider.vue           -- sticky photo/name pane with backdrop image
-      RightSider.vue          -- social links, name, and content sections
+      RightSider.vue          -- social links, intro, and content sections (one left-aligned column)
     sections/
+      IntroSection.vue        -- name, headline, Email / Download resume buttons
       ProfileSection.vue
-      SkillsSection.vue
-      ProjectsSection.vue
+      ProjectsSection.vue     -- web projects grid; first 6 shown, the rest behind "Show all"
+      GamesSection.vue        -- Play'n GO games grid
       ExperienceSection.vue
       ExperienceCard.vue
+      SkillsSection.vue
+      RecommendationsSection.vue / RecommendationCard.vue
+      ContactSection.vue      -- closing contact block + footer
   data/
-    socialLinks.ts
+    socialLinks.ts           -- also exports contactEmail
     experience.ts
     skills.ts
     projects.ts
+    games.ts
+    companies.ts
+    recommendations.ts
   pages/
     index.vue               -- renders <AppShell />, sets SEO/OG meta
 public/
-  images/                    -- back-img.jpeg, profile-back.jpg, profile-image.webp
+  images/                    -- back-img.jpg, profile-image.webp, projects/, games/
   favicon.ico, pp.jpg        -- favicon + OG/Twitter share image
 ```
 
@@ -61,10 +68,10 @@ Defined in `app/assets/css/main.css`:
   utilities like `bg-ink`, `text-paper`, `border-glitch-pink`.
 - **Font**: Inconsolata (weights 200-900), configured in `nuxt.config.ts` under
   `fonts.families` and applied globally via `* { font-family: ... }`.
-- **Glitch effect**: `.glitch-text` (the element carrying `data-text`) plus
-  `.glitch-always` (always animating, used by `FullName`) or `.glitch-parent`
-  (animates on hover, used by section headings via `GlitchHeading`). The
-  `@keyframes glitch-anim`, `glitch-anim2`, and `glitch-skew` blocks are **static,
+- **Glitch effect**: `.glitch-text` (the element carrying `data-text`) inside
+  `.glitch-always`, used only by `FullName`. Section headings (`SectionHeading`) are
+  plain on purpose so the page stays easy to read. The
+  `@keyframes glitch-anim` and `glitch-skew` blocks are **static,
   pre-computed** (originally generated from a SCSS `@for`/`random()` loop via a
   one-off Node script) — there's no build step that regenerates them; edit the
   keyframes directly if the effect needs tuning.
@@ -84,8 +91,12 @@ Defined in `app/assets/css/main.css`:
   `ExperienceCard` falls back to a `UAvatar` with the company's initials.
 - **Skills** (`app/data/skills.ts`): array of `SkillCategory` (`name` + `skills[]`),
   rendered as `UBadge` groups in `SkillsSection`.
-- **Projects** (`app/data/projects.ts`): array of `Project` (`title`, `href`,
-  `description`), rendered as `UCard`s in `ProjectsSection`.
+- **Projects** (`app/data/projects.ts`): array of `Project` (`title`, `company`,
+  `description`, optional `href`/`image`/`gradient`), rendered as a grid in
+  `ProjectsSection`. Order matters: the first 6 are shown, the rest sit behind "Show all".
+- **Games** (`app/data/games.ts`): array of `Game` (`title`, optional `role`, `href`,
+  `image`). Images in `public/images/games/` are 960x393 crops of each game's
+  Play'n GO page. Unreleased games have no `href`/`image` and show a "SOON" tile.
 - **Social links** (`app/data/socialLinks.ts`): array of `{ label, href }`.
 
 ## Components

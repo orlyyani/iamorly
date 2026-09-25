@@ -1,69 +1,32 @@
 <script setup lang="ts">
 import { projects } from '~/data/projects'
 import { companyLinks } from '~/data/companies'
+
+// The first few projects are shown up front; the rest sit behind "Show all".
+const FEATURED_COUNT = 6
+
+const showAll = ref(false)
+const visibleProjects = computed(() => showAll.value ? projects : projects.slice(0, FEATURED_COUNT))
+
+function toggleShowAll() {
+  showAll.value = !showAll.value
+}
 </script>
 
 <template>
   <div>
-    <div class="mb-2.5 flex flex-col items-end text-right">
-      <GlitchHeading
-        text="PROJECTS"
-        border="right"
-        tag="h2"
-      />
-      <h3 class="mt-1 cursor-pointer tracking-[0.5em]">
-        Selected Work
-      </h3>
-    </div>
-    <UCarousel
-      v-slot="{ item: project }"
-      :items="projects"
-      :arrows="false"
-      :dots="projects.length > 1"
-      loop
-      align="center"
-      class-names
-      :ui="{
-        container: 'ms-0',
-        item: 'basis-[74%] sm:basis-[68%] lg:basis-[64%] py-6 ps-2 pe-2',
-        controls: 'mt-1',
-        dots: 'gap-1.5',
-        dot: 'size-1.5'
-      }"
-    >
-      <UCard class="h-full origin-center scale-[0.9] opacity-45 blur-[0.5px] transition-all duration-500 ease-out [.is-snapped_&]:scale-100 [.is-snapped_&]:opacity-100 [.is-snapped_&]:blur-0">
-        <template #header>
-          <div class="flex flex-wrap items-baseline justify-between gap-x-3">
-            <component
-              :is="project.href ? 'a' : 'h4'"
-              v-bind="project.href
-                ? { href: project.href, target: '_blank', rel: 'noopener noreferrer' }
-                : {}"
-              class="font-semibold"
-              :class="project.href && 'hover-underline'"
-            >
-              {{ project.title }}
-            </component>
-            <span
-              v-if="project.period"
-              class="text-sm text-(--ui-text-muted)"
-            >{{ project.period }}</span>
-          </div>
-          <a
-            :href="companyLinks[project.company]"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-sm text-(--ui-text-muted) hover:underline"
-          >
-            Associated with {{ project.company }}
-          </a>
-        </template>
+    <SectionHeading text="PROJECTS" />
+    <div class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
+      <div
+        v-for="project in visibleProjects"
+        :key="project.title"
+      >
         <a
           v-if="project.image"
           :href="project.href"
           target="_blank"
           rel="noopener noreferrer"
-          class="group mb-4 block overflow-hidden rounded-lg p-3 sm:p-4"
+          class="group block overflow-hidden rounded-lg p-2.5"
           :style="{ background: project.gradient }"
         >
           <NuxtImg
@@ -72,34 +35,41 @@ import { companyLinks } from '~/data/companies'
             loading="lazy"
             width="1440"
             height="900"
-            sizes="sm:100vw md:640px"
-            class="w-full rounded-md shadow-lg ring-1 ring-black/10 transition-transform duration-500 ease-out group-hover:scale-[1.12]"
+            sizes="sm:100vw md:320px"
+            class="w-full rounded-md shadow-lg ring-1 ring-black/10 transition-transform duration-500 ease-out group-hover:scale-[1.06]"
           />
         </a>
-        <p class="text-left">
+        <component
+          :is="project.href ? 'a' : 'h3'"
+          v-bind="project.href
+            ? { href: project.href, target: '_blank', rel: 'noopener noreferrer' }
+            : {}"
+          class="mt-3 block font-semibold"
+          :class="project.href && 'hover:underline'"
+        >
+          {{ project.title }}
+        </component>
+        <a
+          :href="companyLinks[project.company]"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-(--ui-text-muted) hover:underline"
+        >
+          {{ project.company }}<span v-if="project.period"> · {{ project.period }}</span>
+        </a>
+        <p class="mt-1.5 text-sm">
           {{ project.description }}
         </p>
-        <div
-          v-if="project.skills?.length"
-          class="mt-2 flex flex-wrap gap-2"
-        >
-          <UBadge
-            v-for="skill in project.skills"
-            :key="skill"
-            variant="subtle"
-            color="neutral"
-          >
-            {{ skill }}
-          </UBadge>
-          <UBadge
-            v-if="project.skillsMore"
-            variant="subtle"
-            color="neutral"
-          >
-            +{{ project.skillsMore }} skills
-          </UBadge>
-        </div>
-      </UCard>
-    </UCarousel>
+      </div>
+    </div>
+    <UButton
+      v-if="projects.length > FEATURED_COUNT"
+      color="neutral"
+      variant="outline"
+      class="mt-8"
+      :icon="showAll ? 'i-lucide-chevron-up' : 'i-lucide-chevron-down'"
+      :label="showAll ? 'Show fewer projects' : `Show all ${projects.length} projects`"
+      @click="toggleShowAll"
+    />
   </div>
 </template>

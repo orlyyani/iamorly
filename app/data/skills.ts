@@ -5,39 +5,19 @@ export interface SkillCategory {
 
 export const skillCategories: SkillCategory[] = [
   {
-    name: 'Front-End (core)',
-    skills: ['Vue 2/3', 'Nuxt 3', 'TypeScript', 'JavaScript', 'Pinia', 'Vue Router', 'Tailwind CSS', 'Vee-Validate', 'Yup', 'HTML & CSS']
+    name: 'Front-End',
+    skills: ['Vue 3', 'Nuxt 3', 'TypeScript', 'Pinia', 'Tailwind CSS', 'React', 'PWA']
   },
   {
-    name: 'Front-End (other)',
-    skills: ['React', 'StencilJS', 'jQuery', 'Bootstrap']
+    name: 'Game Development',
+    skills: ['Casino / Slot Games', 'Gameplay Mechanics', 'Collect Trails & Respins', 'Audio Integration']
   },
   {
-    name: 'Web Platform',
-    skills: ['PWA', 'Service Workers', 'SSR', 'Firebase Cloud Messaging', 'Auth (cookies / Sanctum)']
+    name: 'Back-End & Cloud',
+    skills: ['Laravel', 'MySQL', 'AWS', 'Docker', 'Stripe']
   },
   {
-    name: 'Back-End',
-    skills: ['PHP', 'Laravel', 'CodeIgniter', 'Node.js', 'REST APIs', 'GraphQL', 'MySQL']
-  },
-  {
-    name: 'Cloud & Tools',
-    skills: ['AWS (S3, EC2)', 'Docker', 'Cloudflare', 'Git', 'CI/CD', 'Jira', 'ClickUp']
-  },
-  {
-    name: 'Integrations',
-    skills: ['Stripe', 'Firebase']
-  },
-  {
-    name: 'Design',
-    skills: ['Figma', 'Photoshop', 'Illustrator', 'After Effects']
-  },
-  {
-    name: 'CMS & Platforms',
-    skills: ['Squarespace', 'WordPress']
-  },
-  {
-    name: 'Leadership',
-    skills: ['Code review', 'Technical estimation', 'Mentoring', 'Candidate evaluation', 'Onboarding', 'Platform council', 'Agile/Scrum']
+    name: 'Design & Leadership',
+    skills: ['Figma', 'UI/UX', 'Code Review', 'Scrum Master', 'Mentoring']
   }
 ]

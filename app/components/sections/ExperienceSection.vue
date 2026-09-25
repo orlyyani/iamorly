@@ -4,12 +4,7 @@ import { experience } from '~/data/experience'
 
 <template>
   <div>
-    <GlitchHeading
-      text="EXPERIENCE"
-      border="left"
-      tag="h2"
-      class="mb-2.5"
-    />
+    <SectionHeading text="EXPERIENCE" />
     <div class="flex flex-col gap-4">
       <ExperienceCard
         v-for="entry in experience"
