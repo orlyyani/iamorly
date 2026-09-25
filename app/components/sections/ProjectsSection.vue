@@ -3,10 +3,11 @@ import { projects } from '~/data/projects'
 import { companyLinks } from '~/data/companies'
 
 // The first few projects are shown up front; the rest sit behind "Show all".
+// Every project is rendered and the extras are hidden with v-show (not v-if), so
+// `nuxi generate` sees their <NuxtImg> and prerenders the /_ipx/ image variants.
 const FEATURED_COUNT = 6
 
 const showAll = ref(false)
-const visibleProjects = computed(() => showAll.value ? projects : projects.slice(0, FEATURED_COUNT))
 
 function toggleShowAll() {
   showAll.value = !showAll.value
@@ -18,7 +19,8 @@ function toggleShowAll() {
     <SectionHeading text="PROJECTS" />
     <div class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
       <div
-        v-for="project in visibleProjects"
+        v-for="(project, index) in projects"
+        v-show="showAll || index < FEATURED_COUNT"
         :key="project.title"
       >
         <a

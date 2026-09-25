@@ -26,7 +26,7 @@ import { games } from '~/data/games'
             loading="lazy"
             width="960"
             height="393"
-            sizes="50vw md:320px"
+            sizes="xs:50vw md:320px"
             class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06]"
           />
           <div
