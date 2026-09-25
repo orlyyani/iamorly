@@ -27,7 +27,7 @@ const backdropStyle = {
             :duration="1000"
             class="text-[1.35em] text-paper sm:text-[1.8em]"
           >
-            Front-End Lead
+            Front-End Dev
           </p>
           <p
             v-motion-slide-visible-once-right
@@ -35,7 +35,7 @@ const backdropStyle = {
             :duration="1000"
             class="text-[1.35em] text-paper sm:text-[1.8em]"
           >
-            / Developer
+            / Game Dev
           </p>
           <p
             v-motion-slide-visible-once-right

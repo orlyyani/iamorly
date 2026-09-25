@@ -3,9 +3,12 @@ export interface SocialLink {
   href: string
 }
 
+export const contactEmail = 'orlyjohnyanson@gmail.com'
+
 export const socialLinks: SocialLink[] = [
   { label: 'GitHub', href: 'https://github.com/orlyyani' },
-  { label: 'Twitter', href: 'https://twitter.com/orlyyani' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/orly-yanson/' },
-  { label: 'Mail', href: 'mailto:orlyjohnyanson@gmail.com' }
+  { label: 'Behance', href: 'https://www.behance.net/orlyyani' },
+  { label: 'X', href: 'https://x.com/orlyyani' },
+  { label: 'Mail', href: `mailto:${contactEmail}` }
 ]

@@ -1,19 +1,18 @@
+<script setup lang="ts">
+const lines = ['ORLY', 'JOHN', 'YANSON']
+</script>
+
 <template>
-  <div class="text-right mt-25">
-    <GlitchHeading
-      text="ORLY"
-      tag="h1"
-      mode="always"
-    />
-    <GlitchHeading
-      text="JOHN"
-      tag="h1"
-      mode="always"
-    />
-    <GlitchHeading
-      text="YANSON"
-      tag="h1"
-      mode="always"
-    />
-  </div>
+  <h1
+    class="glitch-always flex flex-col items-start"
+    aria-label="Orly John Yanson"
+  >
+    <span
+      v-for="line in lines"
+      :key="line"
+      class="glitch-text"
+      :data-text="line"
+      aria-hidden="true"
+    >{{ line }}</span>
+  </h1>
 </template>

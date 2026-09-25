@@ -76,13 +76,6 @@ const initials = computed(() => props.entry.company
           >
             {{ skill }}
           </UBadge>
-          <UBadge
-            v-if="entry.skillsMore"
-            variant="subtle"
-            color="neutral"
-          >
-            +{{ entry.skillsMore }} skills
-          </UBadge>
         </div>
       </div>
     </div>
