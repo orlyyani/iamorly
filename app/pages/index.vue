@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { profileJsonLd } from '~~/shared/recruiterProfile'
+
 definePageMeta({
   colorMode: 'light'
 })
@@ -19,6 +21,17 @@ useSeoMeta({
   twitterTitle: 'iamorly',
   twitterDescription: description,
   twitterImage: 'https://iamorly.com/pp.jpg'
+})
+
+// Structured profile for search engines and recruiter tools; not visible on the page
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://iamorly.com/' },
+    { rel: 'alternate', type: 'application/json', href: '/resume.json', title: 'Resume (JSON Resume)' }
+  ],
+  script: [
+    { type: 'application/ld+json', innerHTML: JSON.stringify(profileJsonLd()) }
+  ]
 })
 </script>
 

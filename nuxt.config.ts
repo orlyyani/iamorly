@@ -51,7 +51,11 @@ export default defineNuxtConfig({
   // "cloudflare" provider (e.g. Cloudflare Workers Builds) don't get
   // switched to a server/worker preset during `nuxi generate`.
   nitro: {
-    preset: 'static'
+    preset: 'static',
+    // Machine-readable profile files for recruiter tools (server/routes), baked into the static build
+    prerender: {
+      routes: ['/resume.json', '/llms.txt', '/sitemap.xml']
+    }
   },
 
   eslint: {
