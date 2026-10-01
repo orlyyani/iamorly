@@ -24,6 +24,27 @@ p {
   margin-bottom: 0;
 }
 
+/* Easter egg #3 (Konami code): the whole page tears and splits into pink/cyan for a
+   moment. Toggled on <html> by EasterEggs.vue. */
+.glitch-mode #__nuxt {
+  animation: page-glitch 2.6s steps(1);
+}
+
+@keyframes page-glitch {
+  0% { transform: translateX(-12px) skewX(6deg); filter: drop-shadow(-6px 0 var(--color-glitch-pink)) drop-shadow(6px 0 var(--color-glitch-cyan)); }
+  4% { transform: translateX(10px); filter: hue-rotate(90deg) drop-shadow(5px 0 var(--color-glitch-pink)); }
+  8% { transform: none; filter: invert(1) hue-rotate(180deg); }
+  11% { transform: translateY(-8px) skewY(1deg); filter: drop-shadow(-4px 0 var(--color-glitch-pink)) drop-shadow(4px 0 var(--color-glitch-cyan)); }
+  16% { transform: translateX(6px) skewX(-4deg); filter: saturate(3) hue-rotate(-60deg); }
+  22% { transform: none; filter: drop-shadow(-3px 0 var(--color-glitch-pink)) drop-shadow(3px 0 var(--color-glitch-cyan)); }
+  30% { transform: translateX(-5px); filter: contrast(1.6) drop-shadow(3px 0 var(--color-glitch-cyan)); }
+  38% { transform: none; filter: drop-shadow(-2px 0 var(--color-glitch-pink)) drop-shadow(2px 0 var(--color-glitch-cyan)); }
+  55% { transform: translateX(3px) skewX(2deg); filter: hue-rotate(40deg) drop-shadow(-2px 0 var(--color-glitch-pink)); }
+  62% { transform: none; filter: drop-shadow(-2px 0 var(--color-glitch-pink)) drop-shadow(2px 0 var(--color-glitch-cyan)); }
+  80% { transform: translateX(-2px); filter: drop-shadow(-1px 0 var(--color-glitch-pink)) drop-shadow(1px 0 var(--color-glitch-cyan)); }
+  90%, 100% { transform: none; filter: none; }
+}
+
 /* Tailwind v4's preflight resets buttons to the default cursor. In the base layer
    so a cursor-* utility on a specific button still wins. */
 @layer base {

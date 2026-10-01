@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, onBeforeUnmount } from 'vue'
+import { computed, ref, watch, onBeforeUnmount } from 'vue'
 import { games } from '~/data/games'
 
 // Only released games have art to put on a reel. The extra last symbol is the FREE SPINS scatter.
@@ -66,6 +66,9 @@ const featured = computed(() => gameSymbols[featuredIndex.value]!)
 const suspenseIsScatter = computed(() => pending.value?.[0] === SCATTER)
 
 const sfx = useSlotSounds()
+const { slotRequest } = useEasterEggs()
+const machineEl = ref<HTMLElement | null>(null)
+const SUPER_BONUS_SPINS = 10
 let stopSuspenseSound: (() => void) | null = null
 
 const timers: ReturnType<typeof setTimeout>[] = []
@@ -300,6 +303,32 @@ function finish(next: number[], teased: boolean) {
   }
 }
 
+/** Konami-code reward: a 10-spin bonus round, queued until the machine is idle. */
+function startSuperBonus() {
+  if (spinning.value || bonus.value) {
+    later(500, startSuperBonus)
+    return
+  }
+  bonusSummary.value = null
+  outcome.value = 'none'
+  bonus.value = { total: SUPER_BONUS_SPINS, played: 0, wins: 0 }
+  rebooting.value = true
+  later(900, () => {
+    rebooting.value = false
+  })
+  showBanner('SUPER BONUS', 50, `${SUPER_BONUS_SPINS} free spins`)
+  sfx.freeSpins()
+  later(2600, spin)
+}
+
+// Requests from the easter eggs (terminal `spin`, Konami code): bring the machine into view first.
+watch(slotRequest, (request) => {
+  if (!request) return
+  machineEl.value?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  if (request.kind === 'super-bonus') later(2800, startSuperBonus)
+  else if (!spinning.value && !bonus.value) later(600, spin)
+})
+
 // Digital-noise blocks that flicker over the machine on a win, regenerated per banner
 // so each burst looks different.
 const BLOCK_COLORS = ['var(--color-glitch-pink)', 'var(--color-glitch-cyan)', '#ffffff']
@@ -331,6 +360,7 @@ onBeforeUnmount(() => {
 <template>
   <div class="mt-5">
     <div
+      ref="machineEl"
       class="slot-machine relative rounded-xl bg-ink p-3 sm:p-4"
       :class="{
         'is-big-win': outcome === 'big',

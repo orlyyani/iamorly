@@ -1,4 +1,20 @@
 <script setup lang="ts">
+const { terminalOpen } = useEasterEggs()
+
+// Easter egg #2: a quick double-click (or double-tap) on the badge opens the hidden terminal.
+const DOUBLE_CLICK_MS = 500
+let lastBadgeClick = 0
+
+function onBadgeClick() {
+  const now = Date.now()
+  if (now - lastBadgeClick < DOUBLE_CLICK_MS) {
+    terminalOpen.value = true
+    lastBadgeClick = 0
+  } else {
+    lastBadgeClick = now
+  }
+}
+
 const backdropStyle = {
   backgroundImage: 'linear-gradient(rgba(15,12,43,0.9), rgba(15,12,43,0.9)), url(\'/images/back-img.jpg\')'
 }
@@ -14,7 +30,8 @@ const backdropStyle = {
         <div
           v-motion-slide-visible-once-left
           :duration="1000"
-          class="inline-block bg-paper p-1.5"
+          class="inline-block touch-manipulation bg-paper p-1.5 select-none"
+          @click="onBadgeClick"
         >
           <p class="inline border-l-[7px] border-ink pl-1.5 text-[1.2em] text-ink">
             iamorly

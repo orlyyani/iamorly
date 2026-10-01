@@ -14,5 +14,8 @@ const backdropStyle = {
       <LeftSider />
       <RightSider />
     </div>
+    <ClientOnly>
+      <EasterEggs />
+    </ClientOnly>
   </div>
 </template>
