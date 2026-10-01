@@ -21,6 +21,7 @@ const initials = computed(() => props.entry.company
         :alt="entry.company"
         :text="initials"
         size="lg"
+        :ui="{ root: 'shrink-0 bg-white ring ring-default', image: 'object-contain' }"
       />
       <div class="flex-1">
         <h3 class="font-semibold">

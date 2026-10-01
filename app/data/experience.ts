@@ -23,6 +23,7 @@ export const experience: ExperienceEntry[] = [
   {
     id: 'playngo',
     company: 'Play\'n GO',
+    logo: '/images/companies/playngo.png',
     role: 'Front-End Game Developer',
     roleDetail: 'Scrum Master',
     startDate: 'Apr 2024',
@@ -40,6 +41,7 @@ export const experience: ExperienceEntry[] = [
   {
     id: 'appetiser',
     company: 'Appetiser Pty Ltd',
+    logo: '/images/companies/appetiser.png',
     role: 'Lead Front-End Developer',
     roleDetail: 'Platform Council',
     startDate: 'Jul 2018',
@@ -69,6 +71,7 @@ export const experience: ExperienceEntry[] = [
   {
     id: 'codev-lumea',
     company: 'CoDev',
+    logo: '/images/companies/codev.jpg',
     role: 'Full Stack Web Developer',
     roleDetail: 'Deployed to client Lumea',
     employmentType: 'Full-time',
@@ -82,6 +85,7 @@ export const experience: ExperienceEntry[] = [
   {
     id: 'adaca',
     company: 'Adaca',
+    logo: '/images/companies/adaca.png',
     role: 'Web Developer',
     startDate: 'Dec 2021',
     endDate: 'Sep 2023',
@@ -93,6 +97,7 @@ export const experience: ExperienceEntry[] = [
   {
     id: 'mynd-consulting',
     company: 'Mynd Consulting',
+    logo: '/images/companies/mynd-consulting.jpg',
     role: 'Web/UI Designer & Developer',
     startDate: 'Apr 2016',
     endDate: 'Aug 2018',

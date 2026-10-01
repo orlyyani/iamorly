@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { games } from '~/data/games'
+
+// The slot machine is the main view; the full grid sits behind a toggle. v-show (not
+// v-if) so `nuxi generate` still sees the grid's <NuxtImg> and prerenders its images.
+const showAll = ref(false)
 </script>
 
 <template>
@@ -8,7 +12,22 @@ import { games } from '~/data/games'
     <p>
       Casino slots I've developed at Play'n GO, from core gameplay and collect trails to respins and audio.
     </p>
-    <div class="mt-5 grid grid-cols-2 gap-x-3 gap-y-4 sm:gap-x-4">
+    <SlotMachine />
+    <UButton
+      color="neutral"
+      variant="outline"
+      class="mt-6"
+      :icon="showAll ? 'i-lucide-chevron-up' : 'i-lucide-chevron-down'"
+      :label="showAll ? 'Hide games list' : `Show all ${games.length} games`"
+      :aria-expanded="showAll"
+      aria-controls="games-grid"
+      @click="showAll = !showAll"
+    />
+    <div
+      v-show="showAll"
+      id="games-grid"
+      class="mt-4 grid grid-cols-2 gap-x-3 gap-y-4 sm:gap-x-4"
+    >
       <component
         :is="game.href ? 'a' : 'div'"
         v-for="game in games"
