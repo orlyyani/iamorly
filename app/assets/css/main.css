@@ -24,6 +24,19 @@ p {
   margin-bottom: 0;
 }
 
+/* Tailwind v4's preflight resets buttons to the default cursor. In the base layer
+   so a cursor-* utility on a specific button still wins. */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
 /* Glitch text effect, used only by FullName.
    .glitch-text is the data-text-bearing element; inside .glitch-always it
    glitches continuously. */
