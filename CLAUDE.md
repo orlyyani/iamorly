@@ -153,12 +153,17 @@ Three hidden extras, all client-only (`<ClientOnly>` in `AppShell`):
 
 Two free, cookie-free tools (no consent banner needed):
 
-- **Cloudflare Web Analytics** for traffic (visits, referrers, countries, devices).
-  Enabled in the Cloudflare dashboard on the Pages project; no code in this repo.
-- **Umami Cloud** for actions. `analytics.client.ts` loads the script only when
-  `NUXT_PUBLIC_UMAMI_WEBSITE_ID` is set (Cloudflare Pages build environment variable),
-  and `data-domains` limits counting to iamorly.com, so dev and preview builds send
-  nothing.
+Both IDs are **build variables** on the Cloudflare Worker (the site deploys as a
+Worker with static assets via Workers Builds, not Pages): dashboard → Workers & Pages →
+iamorly → Settings → Builds → Variables and secrets. `analytics.client.ts` loads each
+script only when its variable is set, and only counts the real domain, so dev and
+preview builds send nothing.
+
+- **Cloudflare Web Analytics** for traffic (visits, referrers, countries, devices),
+  via `NUXT_PUBLIC_CF_BEACON_TOKEN`. The site is set to "Enable with JS Snippet
+  installation" in Web Analytics, because automatic injection doesn't reach a
+  Worker's static assets; the token is in that page's snippet.
+- **Umami Cloud** for actions, via `NUXT_PUBLIC_UMAMI_WEBSITE_ID`.
   - Link/button clicks use Umami's `data-umami-event` attributes: `email-click`,
     `resume-download`, `social-click`, `project-click`, `game-click` (with `from`,
     `project`, `game`, `network` properties).
