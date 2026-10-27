@@ -49,7 +49,10 @@ app/
       SkillPill.vue           -- clickable skill pill with pop/particle animation
       RecommendationsSection.vue / RecommendationCard.vue
       ContactSection.vue      -- closing contact block + footer
+  plugins/
+    analytics.client.ts      -- loads Umami when NUXT_PUBLIC_UMAMI_WEBSITE_ID is set
   composables/
+    useAnalytics.ts          -- track() helper for custom Umami events (no-op without Umami)
     useEasterEggs.ts         -- shared egg state (terminal open, glitch mode, slot requests)
     useSlotSounds.ts         -- Web Audio synthesized slot machine sound effects
   data/
@@ -145,6 +148,25 @@ Three hidden extras, all client-only (`<ClientOnly>` in `AppShell`):
    #__nuxt` in `main.css`) and the slot machine starts a 10-spin SUPER BONUS via
    `useEasterEggs().requestSlot`. The overlay and terminal are teleported to `<body>`
    because the page tear transforms `#__nuxt`, which would break `position: fixed`.
+
+## Analytics
+
+Two free, cookie-free tools (no consent banner needed):
+
+- **Cloudflare Web Analytics** for traffic (visits, referrers, countries, devices).
+  Enabled in the Cloudflare dashboard on the Pages project; no code in this repo.
+- **Umami Cloud** for actions. `analytics.client.ts` loads the script only when
+  `NUXT_PUBLIC_UMAMI_WEBSITE_ID` is set (Cloudflare Pages build environment variable),
+  and `data-domains` limits counting to iamorly.com, so dev and preview builds send
+  nothing.
+  - Link/button clicks use Umami's `data-umami-event` attributes: `email-click`,
+    `resume-download`, `social-click`, `project-click`, `game-click` (with `from`,
+    `project`, `game`, `network` properties).
+  - Custom events go through `useAnalytics().track()`: `skill-open`, `slot-spin`
+    (visitor clicks only, not auto-played bonus spins), `slot-big-win`,
+    `slot-free-spins`, `slot-sound`, `terminal-open` (`via` typed/badge),
+    `terminal-command` (known command names only, never typed text),
+    `easter-egg-found`.
 
 ## Components
 

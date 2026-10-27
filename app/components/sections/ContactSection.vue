@@ -18,6 +18,8 @@ const year = new Date().getFullYear()
         color="neutral"
         size="lg"
         :label="contactEmail"
+        data-umami-event="email-click"
+        data-umami-event-from="contact"
       />
       <UButton
         to="https://www.linkedin.com/in/orly-yanson/"
@@ -27,6 +29,9 @@ const year = new Date().getFullYear()
         variant="outline"
         size="lg"
         label="LinkedIn"
+        data-umami-event="social-click"
+        data-umami-event-network="LinkedIn"
+        data-umami-event-from="contact"
       />
     </div>
     <p class="mt-16 text-sm text-(--ui-text-muted)">

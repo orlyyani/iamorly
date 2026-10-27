@@ -18,8 +18,19 @@ export function useEasterEggs() {
   const slotRequest = useState<SlotRequest | null>('egg:slot', () => null)
   const found = useState<EggId[]>('egg:found', () => [])
 
+  const { track } = useAnalytics()
+
   function markFound(egg: EggId) {
-    if (!found.value.includes(egg)) found.value = [...found.value, egg]
+    if (found.value.includes(egg)) return
+    found.value = [...found.value, egg]
+    track('easter-egg-found', { egg })
+  }
+
+  /** Open the hidden terminal, recording how it was found ("typed" or "badge"). */
+  function openTerminal(via: 'typed' | 'badge') {
+    if (terminalOpen.value) return
+    terminalOpen.value = true
+    track('terminal-open', { via })
   }
 
   function requestSlot(kind: SlotRequest['kind']) {
@@ -37,5 +48,5 @@ export function useEasterEggs() {
     requestSlot('super-bonus')
   }
 
-  return { terminalOpen, glitchMode, slotRequest, found, markFound, requestSlot, triggerGlitchMode }
+  return { terminalOpen, glitchMode, slotRequest, found, markFound, openTerminal, requestSlot, triggerGlitchMode }
 }

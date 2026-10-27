@@ -33,7 +33,7 @@ const showAll = ref(false)
         v-for="game in games"
         :key="game.title"
         v-bind="game.href
-          ? { href: game.href, target: '_blank', rel: 'noopener noreferrer' }
+          ? { 'href': game.href, 'target': '_blank', 'rel': 'noopener noreferrer', 'data-umami-event': 'game-click', 'data-umami-event-game': game.title, 'data-umami-event-from': 'grid' }
           : {}"
         class="group block"
       >

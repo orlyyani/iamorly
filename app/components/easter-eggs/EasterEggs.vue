@@ -5,7 +5,7 @@ import { computed, ref, watch, onMounted, onBeforeUnmount } from 'vue'
 //   #1  a greeting in the browser console
 //   #2  a hidden terminal: type "orly" anywhere, or double-click the "iamorly" badge
 //   #3  the Konami code: GLITCH MODE + a super bonus on the slot machine
-const { terminalOpen, glitchMode, triggerGlitchMode } = useEasterEggs()
+const { terminalOpen, glitchMode, openTerminal, triggerGlitchMode } = useEasterEggs()
 
 const KONAMI = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a']
 const SECRET_WORD = 'orly'
@@ -26,7 +26,7 @@ function onKeydown(event: KeyboardEvent) {
     triggerGlitchMode()
   } else if (keys.slice(-SECRET_WORD.length).join('') === SECRET_WORD && !terminalOpen.value) {
     keys = []
-    terminalOpen.value = true
+    openTerminal('typed')
   }
 }
 

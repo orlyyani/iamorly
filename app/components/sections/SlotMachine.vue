@@ -66,6 +66,7 @@ const featured = computed(() => gameSymbols[featuredIndex.value]!)
 const suspenseIsScatter = computed(() => pending.value?.[0] === SCATTER)
 
 const sfx = useSlotSounds()
+const { track } = useAnalytics()
 const { slotRequest } = useEasterEggs()
 const machineEl = ref<HTMLElement | null>(null)
 const SUPER_BONUS_SPINS = 10
@@ -260,6 +261,7 @@ function finish(next: number[], teased: boolean) {
   if (outcome.value === 'big') {
     showBanner('BIG WIN', 26, `3× ${featured.value.title}`)
     sfx.bigWin()
+    track('slot-big-win', { game: featured.value.title, bonus: !!bonus.value })
   }
   if (outcome.value === 'pair' || (outcome.value === 'near' && matches === 2)) showBanner('', 8)
   if (outcome.value === 'pair') sfx.pair()
@@ -270,6 +272,7 @@ function finish(next: number[], teased: boolean) {
       bonus.value.total += FREE_SPINS_AWARD
       showBanner(`+${FREE_SPINS_AWARD} SPINS`, 30, 'Retrigger!')
       sfx.pair()
+      track('slot-free-spins', { retrigger: true })
     } else {
       bonus.value = { total: FREE_SPINS_AWARD, played: 0, wins: 0 }
       rebooting.value = true
@@ -278,6 +281,7 @@ function finish(next: number[], teased: boolean) {
       })
       showBanner('FREE SPINS', 40, `${FREE_SPINS_AWARD} spins · better odds`)
       sfx.freeSpins()
+      track('slot-free-spins', { retrigger: false })
     }
     later(2600, spin)
     return
@@ -301,6 +305,17 @@ function finish(next: number[], teased: boolean) {
       showBanner('BONUS OVER', 20, `${done.wins} win${done.wins === 1 ? '' : 's'} in ${done.total} free spins`)
     })
   }
+}
+
+// Only visitor-initiated spins are counted, not auto-played bonus spins.
+function onSpinClick() {
+  track('slot-spin', { spin: spins.value + 1 })
+  spin()
+}
+
+function toggleSound() {
+  sfx.toggle()
+  track('slot-sound', { on: !sfx.muted.value })
 }
 
 /** Konami-code reward: a 10-spin bonus round, queued until the machine is idle. */
@@ -390,7 +405,7 @@ onBeforeUnmount(() => {
             :aria-label="sfx.muted.value ? 'Turn sound on' : 'Turn sound off'"
             :aria-pressed="!sfx.muted.value"
             :title="sfx.muted.value ? 'Sound off' : 'Sound on'"
-            @click="sfx.toggle"
+            @click="toggleSound"
           >
             <UIcon
               :name="sfx.muted.value ? 'i-lucide-volume-x' : 'i-lucide-volume-2'"
@@ -502,7 +517,7 @@ onBeforeUnmount(() => {
         :disabled="spinning || !!bonus"
         :icon="spinning ? 'i-lucide-loader' : 'i-lucide-dices'"
         :ui="{ leadingIcon: spinning ? 'animate-spin' : '' }"
-        @click="spin"
+        @click="onSpinClick"
       >
         <template v-if="bonus">
           FREE SPIN {{ bonus.played }}/{{ bonus.total }}
@@ -555,6 +570,9 @@ onBeforeUnmount(() => {
         :href="featured.href"
         target="_blank"
         rel="noopener noreferrer"
+        data-umami-event="game-click"
+        :data-umami-event-game="featured.title"
+        data-umami-event-from="slot-machine"
         class="group flex items-center gap-3"
         :class="{ 'opacity-40': spinning }"
       >

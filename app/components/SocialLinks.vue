@@ -13,6 +13,9 @@ import { socialLinks } from '~/data/socialLinks'
         :target="link.href.startsWith('mailto:') ? undefined : '_blank'"
         :rel="link.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'"
         class="hover-underline mr-2.5 text-ink no-underline"
+        :data-umami-event="link.href.startsWith('mailto:') ? 'email-click' : 'social-click'"
+        :data-umami-event-network="link.label"
+        data-umami-event-from="header"
       >{{ link.label }}</a>
       <span
         v-if="index < socialLinks.length - 1"

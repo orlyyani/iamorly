@@ -42,6 +42,14 @@ export default defineNuxtConfig({
     fallback: 'light'
   },
 
+  runtimeConfig: {
+    public: {
+      // Umami Cloud website ID (free analytics). Set NUXT_PUBLIC_UMAMI_WEBSITE_ID in the
+      // Cloudflare Pages build environment; when empty, no analytics script is loaded.
+      umamiWebsiteId: ''
+    }
+  },
+
   routeRules: {
     '/': { prerender: true }
   },

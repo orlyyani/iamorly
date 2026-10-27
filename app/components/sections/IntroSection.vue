@@ -19,6 +19,8 @@ import { contactEmail } from '~/data/socialLinks'
         color="neutral"
         size="lg"
         label="Email me"
+        data-umami-event="email-click"
+        data-umami-event-from="intro"
       />
       <UButton
         to="/Orly-John-Yanson-Resume.pdf"
@@ -29,6 +31,8 @@ import { contactEmail } from '~/data/socialLinks'
         variant="outline"
         size="lg"
         label="Download resume"
+        data-umami-event="resume-download"
+        data-umami-event-from="intro"
       />
     </div>
   </div>

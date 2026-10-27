@@ -30,6 +30,8 @@ function toggleShowAll() {
           rel="noopener noreferrer"
           class="group block overflow-hidden rounded-lg p-2.5"
           :style="{ background: project.gradient }"
+          data-umami-event="project-click"
+          :data-umami-event-project="project.title"
         >
           <NuxtImg
             :src="project.image"
@@ -44,7 +46,7 @@ function toggleShowAll() {
         <component
           :is="project.href ? 'a' : 'h3'"
           v-bind="project.href
-            ? { href: project.href, target: '_blank', rel: 'noopener noreferrer' }
+            ? { 'href': project.href, 'target': '_blank', 'rel': 'noopener noreferrer', 'data-umami-event': 'project-click', 'data-umami-event-project': project.title }
             : {}"
           class="mt-3 block font-semibold"
           :class="project.href && 'hover:underline'"
