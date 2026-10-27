@@ -3,9 +3,11 @@ import { ref } from 'vue'
 import { skillCategories, skillProof } from '~/data/skills'
 
 const openSkill = ref<string | null>(null)
+const { track } = useAnalytics()
 
 function toggle(skill: string) {
   openSkill.value = openSkill.value === skill ? null : skill
+  if (openSkill.value) track('skill-open', { skill })
 }
 </script>
 

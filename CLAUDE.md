@@ -49,7 +49,10 @@ app/
       SkillPill.vue           -- clickable skill pill with pop/particle animation
       RecommendationsSection.vue / RecommendationCard.vue
       ContactSection.vue      -- closing contact block + footer
+  plugins/
+    analytics.client.ts      -- loads Umami when NUXT_PUBLIC_UMAMI_WEBSITE_ID is set
   composables/
+    useAnalytics.ts          -- track() helper for custom Umami events (no-op without Umami)
     useEasterEggs.ts         -- shared egg state (terminal open, glitch mode, slot requests)
     useSlotSounds.ts         -- Web Audio synthesized slot machine sound effects
   data/
@@ -145,6 +148,30 @@ Three hidden extras, all client-only (`<ClientOnly>` in `AppShell`):
    #__nuxt` in `main.css`) and the slot machine starts a 10-spin SUPER BONUS via
    `useEasterEggs().requestSlot`. The overlay and terminal are teleported to `<body>`
    because the page tear transforms `#__nuxt`, which would break `position: fixed`.
+
+## Analytics
+
+Two free, cookie-free tools (no consent banner needed):
+
+Both IDs are **build variables** on the Cloudflare Worker (the site deploys as a
+Worker with static assets via Workers Builds, not Pages): dashboard → Workers & Pages →
+iamorly → Settings → Builds → Variables and secrets. `analytics.client.ts` loads each
+script only when its variable is set, and only counts the real domain, so dev and
+preview builds send nothing.
+
+- **Cloudflare Web Analytics** for traffic (visits, referrers, countries, devices),
+  via `NUXT_PUBLIC_CF_BEACON_TOKEN`. The site is set to "Enable with JS Snippet
+  installation" in Web Analytics, because automatic injection doesn't reach a
+  Worker's static assets; the token is in that page's snippet.
+- **Umami Cloud** for actions, via `NUXT_PUBLIC_UMAMI_WEBSITE_ID`.
+  - Link/button clicks use Umami's `data-umami-event` attributes: `email-click`,
+    `resume-download`, `social-click`, `project-click`, `game-click` (with `from`,
+    `project`, `game`, `network` properties).
+  - Custom events go through `useAnalytics().track()`: `skill-open`, `slot-spin`
+    (visitor clicks only, not auto-played bonus spins), `slot-big-win`,
+    `slot-free-spins`, `slot-sound`, `terminal-open` (`via` typed/badge),
+    `terminal-command` (known command names only, never typed text),
+    `easter-egg-found`.
 
 ## Components
 

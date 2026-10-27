@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { terminalOpen } = useEasterEggs()
+const { openTerminal } = useEasterEggs()
 
 // Easter egg #2: a quick double-click (or double-tap) on the badge opens the hidden terminal.
 const DOUBLE_CLICK_MS = 500
@@ -8,7 +8,7 @@ let lastBadgeClick = 0
 function onBadgeClick() {
   const now = Date.now()
   if (now - lastBadgeClick < DOUBLE_CLICK_MS) {
-    terminalOpen.value = true
+    openTerminal('badge')
     lastBadgeClick = 0
   } else {
     lastBadgeClick = now

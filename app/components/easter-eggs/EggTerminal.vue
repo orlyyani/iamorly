@@ -13,6 +13,7 @@ interface Line {
 }
 
 const { terminalOpen, found, markFound, requestSlot, triggerGlitchMode } = useEasterEggs()
+const { track } = useAnalytics()
 
 const PROMPT = 'guest@iamorly:~$'
 const RESUME = '/Orly-John-Yanson-Resume.pdf'
@@ -265,6 +266,8 @@ function submit() {
     historyIndex = history.length
     const [name = '', ...args] = raw.split(/\s+/)
     const command = commands[name.toLowerCase()]
+    // Only the name of a known command is recorded, never what the visitor typed.
+    track('terminal-command', { command: command ? name.toLowerCase() : 'unknown' })
     lines.value.push(...(command
       ? command.run(args)
       : [out(`command not found: ${name}. type \`help\` for a list.`, 'error')]))

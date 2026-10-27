@@ -42,6 +42,18 @@ export default defineNuxtConfig({
     fallback: 'light'
   },
 
+  runtimeConfig: {
+    public: {
+      // Free analytics, set as build variables in the Cloudflare Worker's
+      // Settings -> Builds -> Variables and secrets. Each script loads only when set.
+      // Umami Cloud website ID (custom events): NUXT_PUBLIC_UMAMI_WEBSITE_ID
+      umamiWebsiteId: '',
+      // Cloudflare Web Analytics site token (traffic): NUXT_PUBLIC_CF_BEACON_TOKEN.
+      // Automatic injection doesn't reach a Worker's static assets, so the site loads it.
+      cfBeaconToken: ''
+    }
+  },
+
   routeRules: {
     '/': { prerender: true }
   },
